@@ -1,4 +1,8 @@
-# A really random orchestration
+# A Really Random Orchestration
+
+- IaC with terraform
+- Automated dependency management with Renovate Bot
+- GitHub Actions workflows for continuous integration
 
 ## Sources
 
