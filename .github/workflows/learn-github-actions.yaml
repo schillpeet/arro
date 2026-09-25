@@ -8,5 +8,6 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Say hello
-        run: echo 'Hello from GitHub Actions!'
+        run: ls -lh
