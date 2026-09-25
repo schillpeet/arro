@@ -1,4 +1,4 @@
-name: Learn GitHub Actions
+name: CI Workflow
 
 on:
   push:
@@ -11,8 +11,15 @@ jobs:
       - name: "List Files 1"
         run: ls -la
 
-      - name: "Checkout Code"
+      # Most GitHub Actions workflows assume your repository’s code is already
+      # present on the runner — but it isn’t. Runners start with an empty workspace,
+      # and actions/checkout is the step that pulls your repo into $GITHUB_WORKSPACE
+      # so the rest of your jobs can build, test, lint, or deploy.
+      - name: "Checkout repository"
         uses: actions/checkout@v4
 
       - name: "List Files 2"
         run: ls -la
+
+      - name: "Docker: check version"
+        run: docker --version
