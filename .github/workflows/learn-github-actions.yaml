@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  hello:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: "List Files 1"
@@ -21,5 +21,5 @@ jobs:
       - name: "List Files 2"
         run: ls -la
 
-      - name: "Docker: check version"
-        run: docker --version
+      - name: "Docker build"
+        run: docker build -t arro:ci .
