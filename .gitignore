@@ -1,1 +1,12 @@
+# personel notes
 .notes
+
+# terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+terraform/*.tfvars.json
+terraform/crash.log
+terraform/crash.*.log
+terraform/tfplan
