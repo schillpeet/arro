@@ -1,0 +1,23 @@
+# you have also to activate the following in settings:
+# Allow GitHub Actions to create and approve pull requests
+name: renovate
+
+on:
+  schedule:
+    - cron: "0 */1 * * *"
+  workflow_dispatch: # manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: renovatebot/github-action@v41
+        with:
+          configurationFile: renovate.json
+        env:
+          RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
