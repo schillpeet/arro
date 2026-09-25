@@ -1,5 +1,10 @@
 name: CI Workflow
 
+# "Explicit is better than implicit." — The Zen of Python
+# Principle of Least Privilege / Explicit Permissions
+permissions:
+  contents: read
+
 on:
   pull_request:
     branches: [main]
