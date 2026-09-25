@@ -8,6 +8,11 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Say hello
-        run: ls -lh
+      - name: "List Files 1"
+        run: ls -la
+
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+
+      - name: "List Files 2"
+        run: ls -la
